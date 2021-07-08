@@ -9,7 +9,7 @@ export const Categories = ({
   items,
   onClickItem,
 }: CategoriesProps): JSX.Element => {
-  const [activeItem, setActiveItem] = React.useState<number | null>();
+  const [activeItem, setActiveItem] = React.useState<number | null>(null);
 
   const onSelectItem = (index: number | null) => {
     setActiveItem(index);
