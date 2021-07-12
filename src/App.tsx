@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Route } from "react-router-dom";
 import "./App.scss";
 import { Header } from "./layout/Header";
@@ -6,6 +6,17 @@ import { Cart } from "./pages/Cart";
 import { Home } from "./pages/Home";
 
 function App() {
+
+  const [pizzas, setPizzas] = useState([]);
+
+  useEffect(() => {
+    fetch('http://localhost:3000/db.json').then((date)=> date.json()).then(json => {
+      setPizzas(json.pizzas)
+    });
+  }, [] )
+
+  console.log(pizzas);
+
   return (
     <div className="App">
       <div className="wrapper">
