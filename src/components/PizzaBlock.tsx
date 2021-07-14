@@ -1,6 +1,7 @@
+// import { PizzaInterface } from "../interfaces/PizzaProps";
+// export const PizzaBlock = ({id, imageUrl, name, types, sizes, price, category, rating }: PizzaInterface) => {
 
-
-export const PizzaBlock = () => {
+export const PizzaBlock = (): JSX.Element => {
     return(
         <div className="pizza-block">
         <img
