@@ -1,6 +1,11 @@
 import { Categories, PizzaBlock, SortPopup } from "../components";
+import PizzaInterface from "./interfaces/PizzaProps";
 
-export const Home = (): JSX.Element => {
+interface IProps {
+  items: PizzaInterface[];
+}
+
+export const Home = (props: IProps): JSX.Element => {
   return (
     <div className="content">
       <div className="container">
