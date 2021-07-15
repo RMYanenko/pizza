@@ -2,7 +2,7 @@ import React from "react";
 
 interface CategoriesProps {
   items: Array<string>;
-  onClickItem: (item: string) => void;
+  onClickItem?: (item: string) => void;
 }
 
 export const Categories = ({
