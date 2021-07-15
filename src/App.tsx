@@ -4,12 +4,10 @@ import "./App.scss";
 import { Header } from "./layout/Header";
 import { Cart } from "./pages/Cart";
 import { Home } from "./pages/Home";
-
-
-
+import PizzaInterface from "./interfaces/PizzaProps"
 function App() {
 
-  const [pizzas, setPizzas] = useState([]);
+  const [pizzas, setPizzas] = useState<PizzaInterface[]>([]);
 
   useEffect(() => {
     fetch('http://localhost:3000/db.json').then((date)=> date.json()).then(json => {
