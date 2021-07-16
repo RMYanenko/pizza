@@ -18,7 +18,7 @@ export const Home = (props: IProps): JSX.Element => {
         <h2 className="content__title">Все пиццы</h2>
         <div className="content__items">
           {
-            props.items.map((item) => <PizzaBlock key={item.id} name={item.name} imageUrl={item.imageUrl} price={item.price} category={item.category} />)
+            props.items.map((obj) => <PizzaBlock key={obj.id} {...obj} />)
           }
         </div>
       </div>

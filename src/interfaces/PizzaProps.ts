@@ -2,7 +2,7 @@
     id?: number;
     imageUrl: string;
     name: string;
-    types?: (number)[] | null;
+    types?:   Array<number> | null;
     sizes?: (number)[] | null;
     price: number;
     category: number;

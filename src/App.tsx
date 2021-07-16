@@ -3,10 +3,7 @@ import { Route } from "react-router-dom";
 import "./App.scss";
 import { PizzaInterface } from "./interfaces/PizzaProps";
 import { Header } from "./layout/Header";
-import { Cart } from "./pages/Cart";
-import { Home } from "./pages/Home";
-
-
+import { Cart, Home } from "./pages";
 
 function App() {
 
