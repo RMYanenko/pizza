@@ -11,12 +11,18 @@ export const PizzaBlock = ({
   category,
 }: PizzaInterface): JSX.Element => {
   const typeName: Array<string> = ["тонкое", "традиционное"];
+  const availableSizes: Array<number> = [26, 30, 40];
 
   const [activeType, setActiveType] = useState<number>(0);
+  const [activeSize, setActiveSize] = useState(0)
 
   const onSelectType = (id: number) => {
     setActiveType(id);
   };
+
+  const onSelectSize = (id: number) => {
+    setActiveSize(id);
+  }
 
   return (
     <div className="pizza-block">
@@ -38,9 +44,18 @@ export const PizzaBlock = ({
           ))}
         </ul>
         <ul>
-          <li className="active">26 см.</li>
-          <li>30 см.</li>
-          <li>40 см.</li>
+          {availableSizes.map((size, id) => (
+            <li
+              key={size}
+              onClick={() => onSelectSize(id)}
+              className={cn({
+                active: activeSize === id,
+                disabled: !sizes?.includes(size),
+              })}
+            >
+              {size} см
+            </li>
+          ))}
         </ul>
       </div>
       <div className="pizza-block__bottom">
