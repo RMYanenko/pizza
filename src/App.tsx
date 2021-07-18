@@ -1,3 +1,4 @@
+import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { Route } from "react-router-dom";
 import "./App.scss";
@@ -10,9 +11,13 @@ function App() {
   const [pizzas, setPizzas] = useState<PizzaInterface[]>([]);
 
   useEffect(() => {
-    fetch('http://localhost:3000/db.json').then((date)=> date.json()).then(json => {
-      setPizzas(json.pizzas)
-    });
+    axios.get('http://localhost:3000/db.json').then(({data}) => {
+      setPizzas(data.pizzas);
+    })
+
+    // fetch('http://localhost:3000/db.json').then((date)=> date.json()).then(json => {
+    //   setPizzas(json.pizzas)
+    // });
   }, []);
 
   return (
